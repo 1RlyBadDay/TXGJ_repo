@@ -8,6 +8,12 @@ public class Enemy : Entity
     public float attackDistance;
     public GameObject player;
     public bool readyToAttack = true;
+    private GameManager gameManager;
+
+    void Awake()
+    {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,9 +28,10 @@ public class Enemy : Entity
             Debug.LogError("Player not found in scene");
         }
         currentHealth = enemyData.HEALTH;
-        if(attackDistance == 0){
+        if (attackDistance == 0) {
             attackDistance = enemyData.attackRange - 0.25f; //slightly less than attack range so it can reach the player
         }
+        
     }
 
     // Update is called once per frame
