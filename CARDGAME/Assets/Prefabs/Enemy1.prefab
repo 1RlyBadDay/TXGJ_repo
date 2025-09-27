@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3886096785265727224}
   - component: {fileID: 290792708351115419}
+  - component: {fileID: 492208113254450365}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -167,9 +168,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be365feeba440bc409fa96b309d4ba96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStatManager
-  debugging: 0
-  enemyData: {fileID: 0}
+  debugging: 1
+  enemyData: {fileID: 11400000, guid: e77b8b0db4416aa4cb12cac362ea612f, type: 2}
   currentHealth: 0
   attackDistance: 0
   player: {fileID: 0}
   readyToAttack: 1
+--- !u!61 &492208113254450365
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7414709230927206750}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
