@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dfe0c1b02bfe1d47ae780ffe1d7647f, type: 3}
+  m_Name: AttackCard_Heavy
+  m_EditorClassIdentifier: Assembly-CSharp::CardData
+  cardArt: {fileID: 0}
+  displayName: Slash
+  description: '"Deals 100 damage to enemy"'
+  cardType: 0
+  inputSequence: 0000000002000000030000000200000001000000
+  timeLimit: 5
+  damageAmount: 100
+  healAmount: 0
+  buffAmount: 0
+  buffDuration: 0
+  handLifetime: 13
