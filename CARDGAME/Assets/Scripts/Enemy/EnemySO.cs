@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-[CreateAssetMenu(fileName = "EnemySO", menuName = "Battle Game/EnemySO")]
+[CreateAssetMenu(fileName = "EnemySO", menuName = "BattleGame/EnemySO")]
 public class EnemySO : ScriptableObject
 {
     public Sprite sprite;

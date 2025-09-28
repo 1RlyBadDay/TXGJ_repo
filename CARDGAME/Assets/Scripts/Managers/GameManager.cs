@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("debugging ")]
+    public bool debugging;
+
+    [Header("Background Settings")]
     public bool scrolling = false;
     BackGroundManager backGroundManager;
-    [Header("Background Settings")]
     public bool StopScrolling = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,10 +24,17 @@ public class GameManager : MonoBehaviour
             backGroundManager.StartScrolling();
             scrolling = false;
         }
-        if(StopScrolling)
+        if (StopScrolling)
         {
             backGroundManager.StopScrolling();
             StopScrolling = false;
         }
+    }
+    
+    public void EndGame(){
+        //end the game
+        if (debugging) Debug.Log("Game Over");
+        //stop background scrolling
+        backGroundManager.StopScrolling();
     }
 }

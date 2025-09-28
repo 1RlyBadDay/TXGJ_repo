@@ -4,15 +4,17 @@ public class Enemy : Entity
 {
 
     public EnemySO enemyData;
-    public float currentHealth;
     public float attackDistance;
     public GameObject player;
-    public bool readyToAttack = true;
     private GameManager gameManager;
 
     void Awake()
     {
-        gameManager = GameObject.FindObjectOfType<GameManager>();
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager not found in scene");
+        }
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -46,7 +48,7 @@ public class Enemy : Entity
         if(debugging) Debug.Log("Distance to player: " + Vector2.Distance(transform.position, player.transform.position));
         if (Vector2.Distance(transform.position, player.transform.position) <= attackDistance && readyToAttack)
         {
-            Attacking();
+            Attacking(enemyData.damage, enemyData.reachargeTime, enemyData.attackRange, enemyData.attackAnimation);
             return;
         }
         Walking();
@@ -59,31 +61,6 @@ public class Enemy : Entity
         transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), enemyData.SPEED * Time.deltaTime);
     }
 
-    void Attacking()
-    {
-        // ! Attacking Animation
-        //enemy is attacking a tower or a unit
-        //play attack animation
-        readyToAttack = false;
-        inAnimation = true;
-        if (debugging) Debug.Log("Attacking");
-        //int attackIndex = Random.Range(0, enemyData.attacks.Count - 1);
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(transform.position, enemyData.attackRange);
-        if(debugging) Debug.Log("Enemy Attacking Players in Range: " + hitPlayer.Length);
-        foreach (Collider2D player in hitPlayer)
-        {
-            if(player.GetComponent<Player>() == null) continue;
-            player.GetComponent<Player>().TakeDamage(enemyData.damage);
-        }
-        Invoke("resetAttack", enemyData.reachargeTime);//THE ANIMATION WILL HANDLE THIS
-        Invoke("finishAnimation", enemyData.reachargeTime); //THE ANIMATION WILL HANDLE THIS
-    }
-    void resetAttack(){
-        readyToAttack = true;
-    }
-    void finishAnimation(){
-        inAnimation = false;
-    }
     void OnDrawGizmos(){
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, enemyData.attackRange);
@@ -91,7 +68,7 @@ public class Enemy : Entity
         Gizmos.DrawLine(transform.position, player.transform.position);
     }
 
-    void Dying(){
+    public override void Dying(){
         // ! Dying Animation
         //enemy has been killed
         if(debugging) Debug.Log("Dying");
@@ -100,8 +77,5 @@ public class Enemy : Entity
         Destroy(gameObject);
     }
 
-    public override void TakeDamage(float damage){
-        if(debugging) Debug.Log("Taking Damage");
-        currentHealth -= damage;
-    }   
+ 
 }
