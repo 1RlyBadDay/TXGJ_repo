@@ -134,12 +134,13 @@ public class Enemy : Entity
     {
         // ! Dying Animation" HANDLED IN HURT WHEN DYING
         //enemy has been killed
-        if (debugging) Debug.Log("Enemy Died");
+        Debug.Log("Enemy Died");
         alive = false;
         entityManager.RemoveEnemy(gameObject);
 
         //play death animation
-
+        Debug.Log("invoked kill enemy)");  
+        Invoke("KillEnemy", 0.25f);
         //? Increment GOLD, and later $ As well I think...
         /*
         GlobalGameState.Instance.Gold += 10;
@@ -155,8 +156,8 @@ public class Enemy : Entity
         {
             timeManagerScript.AddTime(5f);
         }
-
-        Invoke("KillEnemy", 0.25f);
+         
+        
     }
     
     public void KillEnemy(){

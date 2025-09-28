@@ -9,6 +9,15 @@ public class BackGroundManager : MonoBehaviour
     public Transform background1StartPos;
     public Transform background1EndPos;
     public List<GameObject> backgrounds;
+    public Player player;
+    public void Awake()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        if (player == null)
+        {
+            Debug.LogError("Player not found in scene");
+        }
+    }
     public void StartScrolling()
     {
         scrolling = true;
@@ -18,6 +27,7 @@ public class BackGroundManager : MonoBehaviour
     public void StopScrolling()
     {
         scrolling = false;
+        player.setWalking(false);
     }
     
     void scrollBackground()
@@ -33,7 +43,11 @@ public class BackGroundManager : MonoBehaviour
     }
     public void Update()
     {
-       if(scrolling) scrollBackground();
+        if (scrolling)
+        {
+            scrollBackground();
+            player.setWalking(true);
+       } 
 
     }
 }

@@ -14,6 +14,7 @@ public class Player : Entity
     public bool attack = false;
     public bool healing = false;
     public bool buffing = false;
+
     void Awake()
     {
         eMaxHealth = playerData.MAX_HEALTH;
@@ -65,6 +66,7 @@ public class Player : Entity
             buffDamage(2f, 5f); //example value
             buffing = false;
         }
+       
     }
     public override void Attacking(float damage, float reachargeTime, float attackRange, AnimationClip attackAnimation)
     {
@@ -126,5 +128,9 @@ public class Player : Entity
         inAnimation = true;
         Invoke("finishAnimation", pAnimator.GetCurrentAnimatorStateInfo(0).length);
     }
+    public void setWalking(bool walking)
+    {
+        pAnimator.SetBool("Walking", walking);
+    }  
 
 }
