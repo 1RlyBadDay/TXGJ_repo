@@ -9,6 +9,8 @@ public class Enemy : Entity
     private GameManager gameManager;
     private EntityManager entityManager;
     public bool walking = true;
+    // private GameObject timeManager;
+    private TimerManager timeManagerScript;
 
     void Awake()
     {
@@ -27,6 +29,14 @@ public class Enemy : Entity
         {
             Debug.LogError("EntityManager not found in scene");
         }
+
+        timeManagerScript = GameObject.Find("GlobalTimerUI").GetComponent<TimerManager>();
+
+        if (timeManagerScript == null)
+        {
+            Debug.LogError("TimeManager not found in scene");
+        }
+
         
     }
 
@@ -98,6 +108,12 @@ public class Enemy : Entity
 
         //? Increment GOLD, and later $ As well I think...
         GlobalGameState.Instance.Gold += 10; 
+
+        //? INCREMENT TIME ADD:
+        if (timeManagerScript != null)
+        {
+            timeManagerScript.AddTime(5f);
+        }
 
         Destroy(gameObject);
     }
