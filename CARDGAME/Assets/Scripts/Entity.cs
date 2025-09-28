@@ -15,20 +15,28 @@ public abstract class Entity : MonoBehaviour
     public float eMaxHealth;
     public Slider healthBar;
     public Animator eAnimator;
-    
+
     
     public virtual void Attacking(float damage, float reachargeTime, float attackRange, AnimationClip attackAnimation)
     {
+        Debug.Log("entity entered attack");
         // ! Attacking Animation
-
+        // if(damage <= 0) {
+        //     Debug.LogError("Damage must be greater than 0");
+        //     return;
+        // }
+        // if(attackRange <= 0) {
+        //     Debug.LogError("Attack range must be greater than 0");
+        //     return;
+        // }
         //player is attacking a tower or a unit
         //play attack animation
         readyToAttack = false;
-        inAnimation = true;
-        if (debugging) Debug.Log(gameObject.name + "Attacking");
+       // Debug.Log(gameObject.name + "Attacking with range: " + attackRange);
         //int attackIndex = Random.Range(0, enemyData.attacks.Count - 1);
+      
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, attackRange);
-        if (debugging) Debug.Log(gameObject.name + " Attacking entites in Range: " + hits.Length);
+        Debug.Log(gameObject.name + " Attacking entites in Range: " + hits.Length);
         foreach (Collider2D obj in hits)
         {
             Entity entity = obj.GetComponent<Entity>();
@@ -52,7 +60,6 @@ public abstract class Entity : MonoBehaviour
 
         }
         Invoke("resetAttack", reachargeTime);//THE ANIMATION WILL HANDLE THIS
-        Invoke("finishAnimation", reachargeTime); //THE ANIMATION WILL HANDLE THIS
     }
     void resetAttack(){
         readyToAttack = true;

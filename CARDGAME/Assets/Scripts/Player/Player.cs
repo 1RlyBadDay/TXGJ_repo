@@ -44,6 +44,7 @@ public class Player : Entity
         {
             Debug.LogError(gameObject.name + " Animator component not found");
         }
+        eAnimator = pAnimator;
     }
 
     // Update is called once per frame
@@ -103,6 +104,9 @@ public class Player : Entity
         currentHealth += amount;
         if (currentHealth > playerData.MAX_HEALTH) currentHealth = playerData.MAX_HEALTH;
         healthBar.value = currentHealth / playerData.MAX_HEALTH;
+        pAnimator.SetTrigger("Heal");
+        inAnimation = true;
+        Invoke("finishAnimation", pAnimator.GetCurrentAnimatorStateInfo(0).length);
     }
 
     public override void Dying()

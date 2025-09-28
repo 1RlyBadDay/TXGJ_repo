@@ -77,7 +77,7 @@ public class Enemy : Entity
             Dying();
             return;
         }
-        if (debugging) Debug.Log("Distance to player: " + Vector2.Distance(transform.position, player.transform.position));
+//        if (debugging) Debug.Log("Distance to player: " + Vector2.Distance(transform.position, player.transform.position));
         if (Vector2.Distance(transform.position, player.transform.position) <= attackDistance && readyToAttack)
         {
             if (walking)
@@ -88,6 +88,10 @@ public class Enemy : Entity
             Attacking(enemyData.damage, enemyData.reachargeTime, enemyData.attackRange, enemyData.attackAnimation);
             return;
         }
+        if (Vector2.Distance(transform.position, player.transform.position) <= attackDistance)
+        {
+            return; 
+        }
         walking = true;
         Walking();
 
@@ -95,6 +99,7 @@ public class Enemy : Entity
     public override void Attacking(float damage, float reachargeTime, float attackRange, AnimationClip attackAnimation)
     {
         // ! Attacking Animation
+        
         if (attacks.Count > 0)
         {
             int attackIndex = UnityEngine.Random.Range(0, attacks.Count);
@@ -104,9 +109,11 @@ public class Enemy : Entity
         {
             Debug.LogWarning("No attack animations assigned to player.");
         }
+        base.Attacking(damage, reachargeTime, attackRange, attackAnimation);
+        Debug.Log(gameObject.name + " is Attacking");
+        
         inAnimation = true;
         Invoke("finishAnimation", eAnimator.GetCurrentAnimatorStateInfo(0).length);
-        base.Attacking(damage, reachargeTime, attackRange, attackAnimation);
     }
 
     void Walking()
@@ -142,7 +149,7 @@ public class Enemy : Entity
             timeManagerScript.AddTime(5f);
         }
 
-        Invoke("KillEnemy", eAnimator.GetCurrentAnimatorStateInfo(0).length);
+        Invoke("KillEnemy", 0.25f);
     }
     
     public void KillEnemy(){

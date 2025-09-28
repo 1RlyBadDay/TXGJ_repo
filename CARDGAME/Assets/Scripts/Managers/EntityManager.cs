@@ -51,7 +51,8 @@ public class EntityManager : MonoBehaviour
     void SpawnEnemy()
     {
         numberOfEnemies++;
-        enemyPool.Add(Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity).gameObject);
+        // Spawn enemy with 180 degree Y rotation
+        enemyPool.Add(Instantiate(enemyPrefab, spawnPoint.position, Quaternion.Euler(0, 180, 0)).gameObject);
         enemyPool[enemyPool.Count - 1].name = "Enemy " + numberOfEnemies;
         enemyPool[enemyPool.Count - 1].GetComponent<Enemy>().buffDamage(1f + (0.1f * (numberOfEnemies - 1)), 9999f); //increase damage by 10% for each enemy spawned after the first
         enemyPool[enemyPool.Count - 1].GetComponent<Enemy>().damageReduction = 1f - (0.05f * (numberOfEnemies - 1)); //reduce damage taken by 5% for each enemy spawned after the first
