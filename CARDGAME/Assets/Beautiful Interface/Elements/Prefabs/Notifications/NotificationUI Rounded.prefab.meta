@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9e41f33a7139feb45870724cd6300b83
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200978
+  packageName: Beautiful Interface
+  packageVersion: 1.4
+  assetPath: Assets/Beautiful Interface/Elements/Prefabs/Notifications/NotificationUI
+    Rounded.prefab
+  uploadId: 513480

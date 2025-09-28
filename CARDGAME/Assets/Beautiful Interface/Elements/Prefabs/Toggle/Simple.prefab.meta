@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 65eff908e592aad4992f3a252625112a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200978
+  packageName: Beautiful Interface
+  packageVersion: 1.4
+  assetPath: Assets/Beautiful Interface/Elements/Prefabs/Toggle/Simple.prefab
+  uploadId: 513480
