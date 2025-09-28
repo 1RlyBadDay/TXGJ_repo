@@ -17,6 +17,6 @@ MonoBehaviour:
   MAX_HEALTH: 12
   SPEED: 1.5
   damage: 1
-  reachargeTime: 2
+  reachargeTime: 4
   attackRange: 2
   attackAnimation: {fileID: 0}
