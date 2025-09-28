@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: AttackCard_Heavy
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardArt: {fileID: 0}
-  displayName: Slash
-  description: '"Deals 100 damage to enemy"'
+  displayName: Tackle
+  description: '"Deals 8 damage to enemy; Short range"'
   cardType: 0
   inputSequence: 0000000002000000030000000200000001000000
   timeLimit: 5
-  damageAmount: 100
+  damageAmount: 7
   healAmount: 0
   buffAmount: 0
   buffDuration: 0
   attackAnimation: {fileID: 0}
-  attackRange: 140
+  attackRange: 2
   reachargeTime: 0
   handLifetime: 13
