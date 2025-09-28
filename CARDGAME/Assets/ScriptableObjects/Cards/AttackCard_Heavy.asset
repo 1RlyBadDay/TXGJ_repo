@@ -22,4 +22,7 @@ MonoBehaviour:
   healAmount: 0
   buffAmount: 0
   buffDuration: 0
+  attackAnimation: {fileID: 0}
+  attackRange: 140
+  reachargeTime: 0
   handLifetime: 13
