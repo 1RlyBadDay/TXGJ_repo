@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b09653deff002494983cd47dcd13dfe8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200978
+  packageName: Beautiful Interface
+  packageVersion: 1.4
+  assetPath: Assets/Beautiful Interface/Elements/Prefabs/Notifications/Notification
+    Canvas.prefab
+  uploadId: 513480
