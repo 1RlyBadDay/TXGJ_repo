@@ -36,7 +36,7 @@ public class Player : Entity
     void Update()
     {
         if(attack && readyToAttack && !inAnimation && alive){
-            Attacking(1f, 1f, 1f, null); //example values
+            Attacking(1f, 1f, 10f, null); //example values
             attack = false;
         }
     }

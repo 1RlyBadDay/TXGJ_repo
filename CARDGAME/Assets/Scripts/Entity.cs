@@ -11,10 +11,7 @@ public abstract class Entity : MonoBehaviour
     public float damageMultiplier = 1f; //for buffs and debuffs
     public float damageReduction = 1f; //for armor and shields
     
-    public enum entietyType
-    {
-        player, enemy
-    }
+    
     public void Attacking(float damage, float reachargeTime, float attackRange, AnimationClip attackAnimation)
     {
         // ! Attacking Animation
@@ -28,12 +25,24 @@ public abstract class Entity : MonoBehaviour
         if (debugging) Debug.Log(gameObject.name + " Attacking entites in Range: " + hits.Length);
         foreach (Collider2D obj in hits)
         {
-            if(obj.GetComponent<Entity>() == null) continue;
             Entity entity = obj.GetComponent<Entity>();
-            if(entity.alive == false) continue;
-            if(entity.damagable == false) continue;
-            if(entity is Player && this is Enemy) obj.GetComponent<Player>().TakeDamage(damage * damageMultiplier);
-            if(entity is Enemy && this is Player) obj.GetComponent<Enemy>().TakeDamage(damage * damageMultiplier);
+            if (entity == null || !entity.alive || !entity.damagable) continue;
+            
+            // Use pattern matching to safely check and cast at the same time
+            if (this is Enemy && entity is Player playerHit)
+            {
+                playerHit.TakeDamage(damage * damageMultiplier);
+                if (debugging) Debug.Log($"{this.name} hit Player for {damage * damageMultiplier} damage");
+            }
+            else if (this is Player && entity is Enemy enemyHit)
+            {
+                enemyHit.TakeDamage(damage * damageMultiplier);
+                if (debugging) Debug.Log($"{this.name} hit Enemy for {damage * damageMultiplier} damage");
+            }
+            else
+            {
+                if (debugging) Debug.Log($"{this.name} hit {obj.name} but no valid target type found");
+            }
             
         }
         Invoke("resetAttack", reachargeTime);//THE ANIMATION WILL HANDLE THIS
@@ -47,6 +56,8 @@ public abstract class Entity : MonoBehaviour
     }
     public virtual void TakeDamage(float damage)
     {
+        if(debugging && this is Enemy) Debug.Log("Enemy Health: " + currentHealth);
+        if(debugging && this is Player) Debug.Log("Player Health: " + currentHealth);
         if (debugging) Debug.Log(gameObject.name + " Taking Damage");
         currentHealth -= damage * damageReduction;
     } 
