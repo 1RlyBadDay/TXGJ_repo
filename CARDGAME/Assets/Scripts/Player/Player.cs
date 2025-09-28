@@ -7,6 +7,8 @@ public class Player : Entity
 
     [Header("Player Debug")]
     public bool attack = false;
+    public bool healing = false;
+    public bool buffing = false;
     void Awake()
     {
         eMaxHealth = playerData.MAX_HEALTH;
@@ -36,9 +38,20 @@ public class Player : Entity
     // Update is called once per frame
     void Update()
     {
-        if(attack && readyToAttack && !inAnimation && alive){
+        if (attack && readyToAttack && !inAnimation && alive)
+        {
             Attacking(1f, 1f, 10f, null); //example values
             attack = false;
+        }
+        if (healing && alive)
+        {
+            Heal(10f); //example value
+            healing = false;
+        }
+        if(buffing && alive)
+        {
+            buffDamage(2f, 5f); //example value
+            buffing = false;
         }
     }
 

@@ -7,6 +7,7 @@ public class EntityManager : MonoBehaviour
     public Transform spawnPoint;
     public int MAX_ENEMIES = 1;
     public bool spawning = true;
+    int numberOfEnemies = 0;
 
     [Header("debugging ")]
     public bool debugging = false;
@@ -45,9 +46,15 @@ public class EntityManager : MonoBehaviour
             SpawnEnemy();
         }
     }
+
+    //Spawns enemies and updates their stats based on how many have been spawned
     void SpawnEnemy()
     {
+        numberOfEnemies++;
         enemyPool.Add(Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity).gameObject);
+        enemyPool[enemyPool.Count - 1].name = "Enemy " + numberOfEnemies;
+        enemyPool[enemyPool.Count - 1].GetComponent<Enemy>().buffDamage(1f + (0.1f * (numberOfEnemies - 1)), 9999f); //increase damage by 10% for each enemy spawned after the first
+        enemyPool[enemyPool.Count - 1].GetComponent<Enemy>().damageReduction = 1f - (0.05f * (numberOfEnemies - 1)); //reduce damage taken by 5% for each enemy spawned after the first
     }
     public void RemoveEnemy(GameObject enemy)
     {
