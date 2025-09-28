@@ -25,4 +25,4 @@ MonoBehaviour:
   attackAnimation: {fileID: 0}
   attackRange: 0
   reachargeTime: 0
-  handLifetime: 9
+  handLifetime: 20

@@ -21,6 +21,7 @@ public class CardInputManager : MonoBehaviour
     private InputKey[] currentSequence;
     private int index = 0;
     private float timer = 0f;
+    private float totalTime;  // store starting limit // * NEW    
     private bool running = false;
 
     public static CardInputManager Instance { get; private set; }
@@ -43,6 +44,7 @@ public class CardInputManager : MonoBehaviour
         
 
         timer -= Time.deltaTime;
+        // //Debug.Log(timer); // ! DEBUGGING 
 
         if (timerBar)
             timerBar.fillAmount = Mathf.Clamp01(timer / Mathf.Max(0.0001f, timer + 0f + 0f)); // guard
@@ -59,6 +61,11 @@ public class CardInputManager : MonoBehaviour
         {
             FailSequence();
         }
+
+        // * NEW:
+        if (timerBar)
+            timerBar.fillAmount = Mathf.Clamp01(timer / totalTime);
+
     }
 
     //! Start the modal sequence. The caller should have already paused card lifetime.
@@ -69,7 +76,16 @@ public class CardInputManager : MonoBehaviour
         onSuccess = onSuccessCallback;
         onFailure = onFailureCallback;
         index = 0;
+
+        /*
         timer = Mathf.Max(0.01f, data.timeLimit);
+        */
+
+        // * NEW:
+        totalTime = Mathf.Max(0.01f, data.timeLimit);
+        timer = totalTime;
+
+
         running = true;
         if (modalRoot) modalRoot.SetActive(true);
         RefreshUI();
