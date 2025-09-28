@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2dfe0c1b02bfe1d47ae780ffe1d7647f, type: 3}
-  m_Name: AttackCard_Heavy
+  m_Name: ShopCard_2
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardArt: {fileID: 0}
-  displayName: Tackle
-  description: '"Deals 8 damage to enemy; Short range"'
+  displayName: Slash
+  description: '"Deals 2 damage to enemy; Long Range"'
   cardType: 0
-  inputSequence: 0000000002000000030000000200000001000000
+  inputSequence: 030000000100000002000000
   timeLimit: 5
-  damageAmount: 7
+  damageAmount: 2
   healAmount: 0
   buffAmount: 0
   buffDuration: 0
   attackAnimation: {fileID: 0}
-  attackRange: 2
+  attackRange: 4
   reachargeTime: 0
-  handLifetime: 13
+  handLifetime: 7

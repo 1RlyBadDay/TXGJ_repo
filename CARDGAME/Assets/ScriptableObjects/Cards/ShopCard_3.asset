@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2dfe0c1b02bfe1d47ae780ffe1d7647f, type: 3}
-  m_Name: AttackCard_Heavy
+  m_Name: ShopCard_3
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardArt: {fileID: 0}
-  displayName: Tackle
-  description: '"Deals 8 damage to enemy; Short range"'
-  cardType: 0
-  inputSequence: 0000000002000000030000000200000001000000
-  timeLimit: 5
-  damageAmount: 7
+  displayName: Battle Cry
+  description: '"Buffs attack by 250% for 3 seconds"'
+  cardType: 2
+  inputSequence: 0100000003000000000000000000000002000000
+  timeLimit: 10
+  damageAmount: 0
   healAmount: 0
-  buffAmount: 0
-  buffDuration: 0
+  buffAmount: 2.5
+  buffDuration: 3
   attackAnimation: {fileID: 0}
-  attackRange: 2
+  attackRange: 0
   reachargeTime: 0
-  handLifetime: 13
+  handLifetime: 24

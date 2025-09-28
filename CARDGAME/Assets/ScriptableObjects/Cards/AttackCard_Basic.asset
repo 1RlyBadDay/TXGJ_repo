@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardArt: {fileID: 0}
   displayName: Slash
-  description: '"Deals 50 damage to enemy"'
+  description: '"Deals 4 damage to enemy; Medium Range"'
   cardType: 0
   inputSequence: 0000000002000000
   timeLimit: 10
-  damageAmount: 1
+  damageAmount: 4
   healAmount: 0
   buffAmount: 0
   buffDuration: 0
   attackAnimation: {fileID: 0}
-  attackRange: 190
+  attackRange: 4
   reachargeTime: 0
   handLifetime: 22
