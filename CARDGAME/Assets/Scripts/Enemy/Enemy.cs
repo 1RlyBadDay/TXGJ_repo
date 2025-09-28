@@ -93,7 +93,12 @@ public class Enemy : Entity
         if(debugging) Debug.Log("Enemy Died");
         alive = false;
         entityManager.RemoveEnemy(gameObject);
+        
         //play death animation
+
+        //? Increment GOLD, and later $ As well I think...
+        GlobalGameState.Instance.Gold += 10; 
+
         Destroy(gameObject);
     }
 

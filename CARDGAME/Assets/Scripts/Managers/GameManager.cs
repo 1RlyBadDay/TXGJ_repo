@@ -51,5 +51,9 @@ public class GameManager : MonoBehaviour
         if (debugging) Debug.Log("Game Over");
         //stop background scrolling
         backGroundManager.StopScrolling();
+
+        // * SEND TO UPGRADES PAGE:
+        // Colored (maybe red for now, I'm thinking... can be changed here) fade over 2 seconds to the limbo scene
+        Initiate.Fade("LimboScene", Color.red, 0.8f);
     }
 }
