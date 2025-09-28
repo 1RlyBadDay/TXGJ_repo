@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Entity : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public abstract class Entity : MonoBehaviour
     public bool readyToAttack = true;
     public float damageMultiplier = 1f; //for buffs and debuffs
     public float damageReduction = 1f; //for armor and shields
+    public float eMaxHealth;
+    public Slider healthBar;
     
     
     public void Attacking(float damage, float reachargeTime, float attackRange, AnimationClip attackAnimation)
@@ -27,7 +30,7 @@ public abstract class Entity : MonoBehaviour
         {
             Entity entity = obj.GetComponent<Entity>();
             if (entity == null || !entity.alive || !entity.damagable) continue;
-            
+
             // Use pattern matching to safely check and cast at the same time
             if (this is Enemy && entity is Player playerHit)
             {
@@ -43,7 +46,7 @@ public abstract class Entity : MonoBehaviour
             {
                 if (debugging) Debug.Log($"{this.name} hit {obj.name} but no valid target type found");
             }
-            
+
         }
         Invoke("resetAttack", reachargeTime);//THE ANIMATION WILL HANDLE THIS
         Invoke("finishAnimation", reachargeTime); //THE ANIMATION WILL HANDLE THIS
@@ -56,10 +59,11 @@ public abstract class Entity : MonoBehaviour
     }
     public virtual void TakeDamage(float damage)
     {
-        if(debugging && this is Enemy) Debug.Log("Enemy Health: " + currentHealth);
-        if(debugging && this is Player) Debug.Log("Player Health: " + currentHealth);
+        if (debugging && this is Enemy) Debug.Log("Enemy Health: " + currentHealth);
+        if (debugging && this is Player) Debug.Log("Player Health: " + currentHealth);
         if (debugging) Debug.Log(gameObject.name + " Taking Damage");
         currentHealth -= damage * damageReduction;
+        healthBar.value = currentHealth / eMaxHealth;
     } 
     public void buffDamage(float multiplier, float duration){
         damageMultiplier *= multiplier;

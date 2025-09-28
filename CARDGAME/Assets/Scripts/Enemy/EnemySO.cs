@@ -6,7 +6,7 @@ public class EnemySO : ScriptableObject
 {
     public Sprite sprite;
     public GameObject prefab;
-    public float HEALTH;
+    public float MAX_HEALTH;
     public float SPEED;
 
 

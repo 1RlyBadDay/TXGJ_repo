@@ -9,6 +9,7 @@ public class Player : Entity
     public bool attack = false;
     void Awake()
     {
+        eMaxHealth = playerData.MAX_HEALTH;
         if (gameManager == null)
         {
             gameManager = GameObject.FindFirstObjectByType<GameManager>();
@@ -23,7 +24,7 @@ public class Player : Entity
     {
         if (playerData == null)
         {
-            Debug.LogError("Player Data not assigned in inspector");
+            Debug.LogError(gameObject.name + " Player Data not assigned in inspector");
         }
         currentHealth = playerData.STARTING_HEALTH;
         if (currentHealth <= 0)
@@ -60,6 +61,7 @@ public class Player : Entity
         if (debugging) Debug.Log("Player Healed by " + amount);
         currentHealth += amount;
         if (currentHealth > playerData.MAX_HEALTH) currentHealth = playerData.MAX_HEALTH;
+        healthBar.value = currentHealth / playerData.MAX_HEALTH;
     }
     public override void TakeDamage(float damage)
     {
@@ -72,7 +74,7 @@ public class Player : Entity
     }
     public override void Dying()
     {
-        if (debugging) Debug.Log("Player Dying");
+        if (debugging) Debug.Log("Player Died");
         alive = false;
         inAnimation = true;
         // ! Death Animation
