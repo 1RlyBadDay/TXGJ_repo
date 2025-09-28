@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 96314c121b893ac48a7f4bb3c6e52b7e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200978
+  packageName: Beautiful Interface
+  packageVersion: 1.4
+  assetPath: Assets/Beautiful Interface/Elements/Prefabs/Toggle/Switch.prefab
+  uploadId: 513480

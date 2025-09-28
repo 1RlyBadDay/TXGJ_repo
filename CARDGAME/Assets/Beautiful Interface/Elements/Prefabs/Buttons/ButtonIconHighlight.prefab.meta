@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b6b27f3521e716b44b02fedce84ff675
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200978
+  packageName: Beautiful Interface
+  packageVersion: 1.4
+  assetPath: Assets/Beautiful Interface/Elements/Prefabs/Buttons/ButtonIconHighlight.prefab
+  uploadId: 513480

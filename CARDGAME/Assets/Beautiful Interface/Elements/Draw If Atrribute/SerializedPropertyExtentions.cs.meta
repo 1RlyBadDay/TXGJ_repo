@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 93245915f012ecf4ea0ada1aa29eed55
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200978
+  packageName: Beautiful Interface
+  packageVersion: 1.4
+  assetPath: Assets/Beautiful Interface/Elements/Draw If Atrribute/SerializedPropertyExtentions.cs
+  uploadId: 513480

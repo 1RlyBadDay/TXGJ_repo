@@ -623,7 +623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &631981133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1239,6 +1239,9 @@ MonoBehaviour:
   spawnPoint: {fileID: 699769076}
   MAX_ENEMIES: 1
   spawning: 1
+  debugging: 0
+  killAllEnemies: 0
+  enemyPool: []
 --- !u!1 &1250508955
 GameObject:
   m_ObjectHideFlags: 0

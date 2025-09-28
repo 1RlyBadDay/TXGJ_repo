@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0cd6fd6337c908d42ab41b50c23fd30f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 200978
+  packageName: Beautiful Interface
+  packageVersion: 1.4
+  assetPath: Assets/Beautiful Interface/Elements/Scripts/NotificationUI.cs
+  uploadId: 513480
