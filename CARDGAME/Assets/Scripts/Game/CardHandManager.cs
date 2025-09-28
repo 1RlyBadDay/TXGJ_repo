@@ -36,6 +36,15 @@ public class CardHandManager : MonoBehaviour
     }
     private void Start()
     {
+
+        //*** If there are purchased cards queued (from shop), add them to the deck now
+        if (GlobalGameState.Instance != null && GlobalGameState.Instance.PurchasedCardDatas.Count > 0)
+        {
+            deck.AddRange(GlobalGameState.Instance.PurchasedCardDatas);
+            Debug.Log($"[CardHandManager] Added {GlobalGameState.Instance.PurchasedCardDatas.Count} purchased card(s) to deck.");
+            GlobalGameState.Instance.PurchasedCardDatas.Clear(); // prevent double-adding
+        }
+
         ShuffleDeck();
         DrawInitialHand();
     }

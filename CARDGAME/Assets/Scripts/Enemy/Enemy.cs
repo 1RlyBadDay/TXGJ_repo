@@ -142,7 +142,14 @@ public class Enemy : Entity
         Debug.Log("invoked kill enemy)");  
         Invoke("KillEnemy", 0.25f);
         //? Increment GOLD, and later $ As well I think...
+        /*
         GlobalGameState.Instance.Gold += 10;
+        */
+        // Enemy.cs  (inside Dying)
+        float goldMult = GlobalGameState.Instance.GetMultiplier(4); // 1 = no upgrade
+        int reward = Mathf.RoundToInt(10 * goldMult);
+        GlobalGameState.Instance.Gold += reward;
+
 
         //? INCREMENT TIME ADD:
         if (timeManagerScript != null)

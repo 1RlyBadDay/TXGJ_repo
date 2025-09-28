@@ -316,8 +316,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 21, y: -513}
-  m_SizeDelta: {x: 1369.875, y: 565.348}
+  m_AnchoredPosition: {x: 16, y: -513}
+  m_SizeDelta: {x: 1524.91, y: 565.348}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &72587778
 MonoBehaviour:
@@ -1393,7 +1393,7 @@ MonoBehaviour:
   - {fileID: 586826557}
   - {fileID: 438119118}
   - {fileID: 2140501907}
-  costs: 0a00000064000000900100003200000096000000fa0000005e010000
+  costs: 0a00000028000000c8000000f4010000f4010000f4010000f4010000
   shopCard1: {fileID: 11400000, guid: 33cefaf5f017f794581231c28e016144, type: 2}
   shopCard2: {fileID: 11400000, guid: 5480c96d244d7a648a0624ae5b9429ac, type: 2}
   shopCard3: {fileID: 11400000, guid: e2cbab274216d4746aeb08b2c6bb52f9, type: 2}
@@ -2544,7 +2544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 640, y: 19}
+  m_AnchoredPosition: {x: 713, y: 19}
   m_SizeDelta: {x: 90, y: 40}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1130193421
@@ -2583,22 +2583,23 @@ MonoBehaviour:
   m_Text: 'UPGRADES/CARDS SHOP:
 
     CARD 1:     MINI-POTION     "Heals Player 1
-    HP"
+    HP"     10 GOLD
 
-    CARD 2:     SNIPE     "Deals 2 damage to enemy; Long Range"
+    CARD 2:     SNIPE     "Deals 2 damage to enemy; Long Range"    
+    40 GOLD
 
-    CARD
-    3:     FOCUS     "Buffs attack by 250% for 3 seconds"
+    CARD 3:     FOCUS     "Buffs attack by 250% for 3 seconds"     200
+    GOLD
 
-    POWERUP 1:     Increases
-    GOLD recieved by 50%
+    POWERUP 1:     TBD, Coming soon.....
 
-    POWERUP 2:     TBD
+    POWERUP 2:     TBD, Coming
+    soon.....
 
-    POWERUP 3:     TBD
+    POWERUP 3:     TBD, Coming soon.....
 
-    POWERUP
-    4:     TBD'
+    POWERUP 4:     TBD,
+    Coming soon.....'
   isCapitalized: 0
   animateTypingOnStart: 0
   addTrailingUnderscore: 0

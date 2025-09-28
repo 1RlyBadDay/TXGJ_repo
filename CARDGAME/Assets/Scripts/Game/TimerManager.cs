@@ -29,6 +29,20 @@ public class TimerManager : MonoBehaviour
 
     private void Start()
     {
+
+        // ✅ Apply global time multiplier (fourth Limbo button sets index 3)
+        if (GlobalGameState.Instance != null)
+        {
+            float mult = GlobalGameState.Instance.GetMultiplier(3); // 1f normally, 1.5f if upgrade bought
+            if (mult > 1f)
+            {
+                maxTime *= mult;
+                currentTime *= mult; // keep it proportional to start full
+                Debug.Log($"[TimerManager] Max time boosted by {mult}× -> {maxTime:F1}s");
+            }
+        }
+
+
         if (currentTime <= 0f) currentTime = maxTime;
         UpdateTimerUI();
     }
