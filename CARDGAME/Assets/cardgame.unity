@@ -451,17 +451,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417652560}
   m_CullTransparentMesh: 1
---- !u!114 &431829317 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 826628772027268304, guid: a430273d70ad54b48986fd9cfc84fcf1, type: 3}
-  m_PrefabInstance: {fileID: 3846743751476472}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!1 &495559588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,10 +2496,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4943499986403387697, guid: a430273d70ad54b48986fd9cfc84fcf1, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 431829317}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

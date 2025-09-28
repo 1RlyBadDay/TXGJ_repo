@@ -36,11 +36,11 @@ public class CardInputManager : MonoBehaviour
     private void Update()
     {
         // Debug all key presses
-        if (Input.anyKeyDown)
-            Debug.Log($"Any key pressed: {Input.inputString}");
+        // if (Input.anyKeyDown)
+        //     Debug.Log($"Any key pressed: {Input.inputString}");
             
-        if (Input.GetKeyDown(KeyCode.Space))
-            Debug.Log("SPACE pressed");
+        // if (Input.GetKeyDown(KeyCode.Space))
+        //     Debug.Log("SPACE pressed");
         
 
         timer -= Time.deltaTime;

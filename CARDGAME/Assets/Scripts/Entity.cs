@@ -1,4 +1,5 @@
 using System.Linq;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,11 +14,13 @@ public abstract class Entity : MonoBehaviour
     public float damageReduction = 1f; //for armor and shields
     public float eMaxHealth;
     public Slider healthBar;
+    public Animator eAnimator;
     
     
-    public void Attacking(float damage, float reachargeTime, float attackRange, AnimationClip attackAnimation)
+    public virtual void Attacking(float damage, float reachargeTime, float attackRange, AnimationClip attackAnimation)
     {
         // ! Attacking Animation
+
         //player is attacking a tower or a unit
         //play attack animation
         readyToAttack = false;
@@ -59,13 +62,27 @@ public abstract class Entity : MonoBehaviour
     }
     public virtual void TakeDamage(float damage)
     {
+
         if (debugging && this is Enemy) Debug.Log("Enemy Health: " + currentHealth);
         if (debugging && this is Player) Debug.Log("Player Health: " + currentHealth);
         if (debugging) Debug.Log(gameObject.name + " Taking Damage");
         currentHealth -= damage * damageReduction;
         healthBar.value = currentHealth / eMaxHealth;
+
+        if (currentHealth <= 0 && alive)
+        {
+            
+            eAnimator.SetBool("Dead", true);
+            eAnimator.SetTrigger("Hurt");
+            Dying();
+            return;
+        }
+        eAnimator.SetTrigger("Hurt");
+        inAnimation = true;
+        Invoke("finishAnimation", eAnimator.GetCurrentAnimatorStateInfo(0).length);
     } 
-    public void buffDamage(float multiplier, float duration){
+    public virtual void buffDamage(float multiplier, float duration){
+    
         damageMultiplier *= multiplier;
         Invoke("resetDamageBuff", duration);
     }
