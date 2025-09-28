@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardArt: {fileID: 0}
   displayName: Battle Cry
-  description: '"Buffs next attack by 150%"'
+  description: '"Buffs attack by 150% for 10 seconds"'
   cardType: 2
   inputSequence: 000000000300000000000000
   timeLimit: 10
   damageAmount: 0
   healAmount: 0
   buffAmount: 1.5
-  buffDuration: 14
+  buffDuration: 10
   attackAnimation: {fileID: 0}
   attackRange: 0
   reachargeTime: 0
