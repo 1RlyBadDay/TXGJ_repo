@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShopCard_3
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardArt: {fileID: 0}
-  displayName: Battle Cry
+  displayName: Focus
   description: '"Buffs attack by 250% for 3 seconds"'
   cardType: 2
   inputSequence: 0100000003000000000000000000000002000000
