@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ShopCard_2
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardArt: {fileID: 0}
-  displayName: Slash
+  displayName: Snipe
   description: '"Deals 2 damage to enemy; Long Range"'
   cardType: 0
   inputSequence: 030000000100000002000000
