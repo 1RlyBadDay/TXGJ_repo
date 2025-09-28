@@ -46,7 +46,12 @@ public class TimerManager : MonoBehaviour
         {
             isGameOver = true;
             Debug.Log("[TimerManager] GAME OVER – timer hit 0.0");
-            // TODO: trigger real GameOver logic here
+
+            //ToDo ing: trigger real GameOver logic here
+            
+            // * Black fade to the "Main Menu" or later "Limbo" scene:
+            Initiate.Fade("MainMenuScene", Color.black, 5f);
+
         }
     }
 
