@@ -7,6 +7,7 @@ public class Enemy : Entity
     public float attackDistance;
     public GameObject player;
     private GameManager gameManager;
+    private EntityManager entityManager;
 
     void Awake()
     {
@@ -14,6 +15,10 @@ public class Enemy : Entity
         if (gameManager == null)
         {
             Debug.LogError("GameManager not found in scene");
+        }
+        entityManager = GameObject.Find("GameManager").GetComponent<EntityManager>();
+        if (entityManager == null){
+            Debug.LogError("EntityManager not found in scene");
         }
     }
 
@@ -73,6 +78,7 @@ public class Enemy : Entity
         //enemy has been killed
         if(debugging) Debug.Log("Dying");
         alive = false;
+        entityManager.RemoveEnemy(gameObject);
         //play death animation
         Destroy(gameObject);
     }

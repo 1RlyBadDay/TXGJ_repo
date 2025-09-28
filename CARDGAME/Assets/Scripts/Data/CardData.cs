@@ -26,6 +26,9 @@ public class CardData : ScriptableObject
     public int healAmount;             //! Used if Heal
     public float buffAmount;           //! Used if Buff (interpreted by game logic)
     public float buffDuration;         //! How long buff lasts in seconds
+    public AnimationClip attackAnimation;  //! Optional animation to play when card is played
+    public float attackRange;        //! Used if Attack (for targeting, etc.)
+    public float reachargeTime;     //! Used if Attack (for cooldowns, etc.)
 
     [Header("Hand Lifetime")]
     public float handLifetime = 8f;    //! How long card stays in hand before auto-discard

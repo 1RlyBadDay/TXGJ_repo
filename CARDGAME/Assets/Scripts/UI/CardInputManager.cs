@@ -34,7 +34,13 @@ public class CardInputManager : MonoBehaviour
 
     private void Update()
     {
-        if (!running) return;
+        // Debug all key presses
+        if (Input.anyKeyDown)
+            Debug.Log($"Any key pressed: {Input.inputString}");
+            
+        if (Input.GetKeyDown(KeyCode.Space))
+            Debug.Log("SPACE pressed");
+        
 
         timer -= Time.deltaTime;
 
@@ -160,6 +166,8 @@ public class CardInputManager : MonoBehaviour
     //! Detect which supported key was pressed this frame
     private InputKey? DetectPressedKey()
     {
+        // Debug.Log("Detecting key press...");
+        // Debug.Log("Input.anyKeyDown: " + Input.anyKeyDown);
         // arrow keys
         if (Input.GetKeyDown(KeyCode.LeftArrow)) return InputKey.Left;
         if (Input.GetKeyDown(KeyCode.RightArrow)) return InputKey.Right;

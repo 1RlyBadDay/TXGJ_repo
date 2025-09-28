@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9dc8a3f20a46ca45ac0f74bae0a59ef, type: 3}
   m_Name: P1
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSO
-  MAX_HEALTH: 0
-  STARTING_HEALTH: 0
-  SPEED: 0
+  MAX_HEALTH: 10
+  STARTING_HEALTH: 10
+  SPEED: 2
   sprite: {fileID: 0}
   prefab: {fileID: 0}

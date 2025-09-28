@@ -8,16 +8,31 @@ public class GameManager : MonoBehaviour
     [Header("Background Settings")]
     public bool scrolling = false;
     BackGroundManager backGroundManager;
+    EntityManager entityManager;
     public bool StopScrolling = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         backGroundManager = gameObject.GetComponent<BackGroundManager>();
+        if (backGroundManager == null)
+        {
+            Debug.LogError("BackGroundManager not found in scene");
+        }
+        entityManager = gameObject.GetComponent<EntityManager>();
+        if (entityManager == null)
+        {
+            Debug.LogError("EntityManager not found in scene");
+        }
+
+        entityManager.spawning = true; //start spawiong
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space)) Debug.Log("Space pressed in GameManager");
+
         if (scrolling)
         {
             //scroll background

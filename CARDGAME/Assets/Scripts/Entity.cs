@@ -8,6 +8,9 @@ public abstract class Entity : MonoBehaviour
     protected bool inAnimation = false;
     public float currentHealth;
     public bool readyToAttack = true;
+    public float damageMultiplier = 1f; //for buffs and debuffs
+    public float damageReduction = 1f; //for armor and shields
+    
     public enum entietyType
     {
         player, enemy
@@ -29,8 +32,8 @@ public abstract class Entity : MonoBehaviour
             Entity entity = obj.GetComponent<Entity>();
             if(entity.alive == false) continue;
             if(entity.damagable == false) continue;
-            if(entity is Player && this is Enemy) obj.GetComponent<Player>().TakeDamage(damage);
-            if(entity is Enemy && this is Player) obj.GetComponent<Enemy>().TakeDamage(damage);
+            if(entity is Player && this is Enemy) obj.GetComponent<Player>().TakeDamage(damage * damageMultiplier);
+            if(entity is Enemy && this is Player) obj.GetComponent<Enemy>().TakeDamage(damage * damageMultiplier);
             
         }
         Invoke("resetAttack", reachargeTime);//THE ANIMATION WILL HANDLE THIS
@@ -45,9 +48,17 @@ public abstract class Entity : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         if (debugging) Debug.Log(gameObject.name + " Taking Damage");
-        currentHealth -= damage;
+        currentHealth -= damage * damageReduction;
     } 
+    public void buffDamage(float multiplier, float duration){
+        damageMultiplier *= multiplier;
+        Invoke("resetDamageBuff", duration);
+    }
+    void resetDamageBuff(){
+        damageMultiplier = 1f;
+    }
     public abstract void Dying();
+    
 
     [Header("Debugging")]
     public bool debugging;

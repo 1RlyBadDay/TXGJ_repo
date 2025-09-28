@@ -24,9 +24,16 @@ public class CardHandManager : MonoBehaviour
     //! Internal
     private List<CardUI> hand = new List<CardUI>();
     private List<CardData> discard = new List<CardData>();
+    private Player player;
 
-    
-
+    public void Awake()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        if (player == null)
+        {
+            Debug.LogError("Player not found in scene");
+        }
+    }
     private void Start()
     {
         ShuffleDeck();
@@ -99,14 +106,17 @@ public class CardHandManager : MonoBehaviour
         if (ui.CardData.cardType == CardType.Attack)
         {
             Debug.Log($"[CardHandManager] PLAYED Attack card: {ui.CardData.displayName} -> {ui.CardData.damageAmount} dmg");
+            player.Attacking(ui.CardData.damageAmount, ui.CardData.reachargeTime, ui.CardData.attackRange, ui.CardData.attackAnimation); //example values
         }
         else if (ui.CardData.cardType == CardType.Heal)
         {
             Debug.Log($"[CardHandManager] PLAYED Heal card: {ui.CardData.displayName} -> heal {ui.CardData.healAmount}");
+            player.Heal(ui.CardData.healAmount);
         }
         else if (ui.CardData.cardType == CardType.Buff)
         {
             Debug.Log($"[CardHandManager] PLAYED Buff card: {ui.CardData.displayName} -> buff {ui.CardData.buffAmount} for {ui.CardData.buffDuration}s");
+            player.buffDamage(ui.CardData.buffAmount, ui.CardData.buffDuration);
         }
 
         // Move card data to discard and remove UI
