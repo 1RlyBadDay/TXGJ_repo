@@ -84,6 +84,7 @@ public class Enemy : Entity
             {
                 walking = false;
                 gameManager.StopScrolling = true;
+                eAnimator.SetBool("Walk", false);
             }
             Attacking(enemyData.damage, enemyData.reachargeTime, enemyData.attackRange, enemyData.attackAnimation);
             return;
@@ -119,6 +120,7 @@ public class Enemy : Entity
     void Walking()
     {
         // ! Walking Animation
+        eAnimator.SetBool("Walk", true);
         //enemy is walking to position has not collided with someting yet
         Vector3 currentPos = transform.position;
         Vector3 targetPos = new Vector3(player.transform.position.x, currentPos.y, currentPos.z);

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 290792708351115419, guid: 031a4e34ec22ee84a94da5394f758c91, type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: ed68de5db0c9d0347a082e4a243eec55, type: 2}
     - target: {fileID: 1460614545094855249, guid: 031a4e34ec22ee84a94da5394f758c91, type: 3}
       propertyPath: m_Controller
       value: 
@@ -66,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: -4795363162621231457, guid: 6d7cd4f7505dc674c891ca8946cfd98b, type: 3}
     - target: {fileID: 7414709230927206750, guid: 031a4e34ec22ee84a94da5394f758c91, type: 3}
       propertyPath: m_Name
-      value: Enemy1 Variant
+      value: Enemy3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

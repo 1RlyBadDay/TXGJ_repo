@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2bfac75ebf377a43b8cc96861a6995a, type: 3}
-  m_Name: E1
+  m_Name: E3
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
   sprite: {fileID: 0}
   prefab: {fileID: 0}
-  MAX_HEALTH: 15
-  SPEED: 1.5
-  damage: 1
-  reachargeTime: 4
+  MAX_HEALTH: 11
+  SPEED: 2
+  damage: 4
+  reachargeTime: 6
   attackRange: 2
   attackAnimation: {fileID: 0}
