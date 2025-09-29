@@ -52,7 +52,8 @@ public class EntityManager : MonoBehaviour
     {
         numberOfEnemies++;
         // Spawn enemy with 180 degree Y rotation
-        int index = Random.Range(0, enemyPrefabs.Count);
+        var rng = new System.Random(System.DateTime.Now.Ticks.GetHashCode());
+        int index = rng.Next(0, enemyPrefabs.Count);
         GameObject enemyPrefab = enemyPrefabs[index];
         enemyPool.Add(Instantiate(enemyPrefab, spawnPoint.position, Quaternion.Euler(0, 180, 0)).gameObject);
         enemyPool[enemyPool.Count - 1].name = "Enemy " + numberOfEnemies;
