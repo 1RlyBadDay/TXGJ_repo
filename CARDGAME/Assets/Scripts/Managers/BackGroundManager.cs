@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+//using System.Numerics;
 using UnityEngine;
 using UnityEngine.InputSystem.Processors;
 
@@ -34,7 +35,9 @@ public class BackGroundManager : MonoBehaviour
     {
         foreach (GameObject bg in backgrounds)
         {
-            bg.transform.position = Vector2.MoveTowards(bg.transform.position, background1EndPos.position, scrollSpeed * Time.deltaTime);
+            Vector3 currentPos = bg.transform.position;
+            Vector3 targetPos = new Vector3(background1EndPos.position.x, currentPos.y, currentPos.z);
+            bg.transform.position = Vector3.MoveTowards(currentPos, targetPos, scrollSpeed * Time.deltaTime);
             if (bg.transform.position == background1EndPos.position)
             {
                 bg.transform.position = background1StartPos.position;
