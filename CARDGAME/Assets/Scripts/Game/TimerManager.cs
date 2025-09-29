@@ -64,7 +64,7 @@ public class TimerManager : MonoBehaviour
             //ToDo ing: trigger real GameOver logic here
             
             // * Black fade to the "Main Menu" or later "Limbo" scene:
-            Initiate.Fade("MainMenuScene", Color.black, 5f);
+            Initiate.Fade("LimboScene", Color.black, 5f);
 
         }
     }

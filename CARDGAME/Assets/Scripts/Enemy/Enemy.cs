@@ -157,7 +157,7 @@ public class Enemy : Entity
         //? INCREMENT TIME ADD:
         if (timeManagerScript != null)
         {
-            timeManagerScript.AddTime(5f);
+            timeManagerScript.AddTime(10f);
         }
          
         

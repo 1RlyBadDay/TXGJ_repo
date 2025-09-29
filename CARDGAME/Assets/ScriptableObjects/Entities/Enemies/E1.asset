@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
   sprite: {fileID: 0}
   prefab: {fileID: 0}
-  MAX_HEALTH: 12
+  MAX_HEALTH: 11
   SPEED: 1.5
   damage: 1
   reachargeTime: 4

@@ -2023,7 +2023,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: b341d315ad31e3d4f81fe56f1993f018, type: 3}
-    m_FontSize: 53
+    m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -2040,17 +2040,22 @@ MonoBehaviour:
     Assets Used (find on the Unity Asset
     Store):
 
-    Monsters_Creatures_Fantasy by Luiz Melo
+    Monsters_Creatures_Fantasy by Luiz Melo.
 
-    Hero Knight - Pixel
-    Art by Sven Thole
+    Free 4k Parallax Vector
+    Backgrounds by CodeRedCat.
 
-    Clean Flat Icons [2.3] by RainbowArt
+    Parallax Dusk Mountain Background by Ansimuz.
 
-    Beautiful Interface
-    by Snyper Labs
+    Hero
+    Knight - Pixel Art by Sven Thole.
 
-    Simple Fade Scene Transition System by negleft'
+    Clean Flat Icons [2.3] by RainbowArt.
+
+    Beautiful
+    Interface by Snyper Labs.
+
+    Simple Fade Scene Transition System by negleft.'
   isCapitalized: 0
   animateTypingOnStart: 0
   addTrailingUnderscore: 0
