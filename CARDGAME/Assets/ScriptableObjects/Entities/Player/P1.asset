@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSO
   MAX_HEALTH: 15
   STARTING_HEALTH: 15
-  SPEED: 50
+  SPEED: 2
   sprite: {fileID: 0}
   prefab: {fileID: 0}
