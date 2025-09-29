@@ -2,6 +2,7 @@ using System;
 using System.Collections;   // needed for IEnumerator / StartCoroutine
 using System.Collections.Generic;
 using UnityEngine;
+using Interface.Elements.Scripts; // ***← so i can call AudioManager
 
 //! Controls deck/hand/discard: draws cards, handles click -> starts mini-game, handles expiration
 public class CardHandManager : MonoBehaviour
@@ -25,6 +26,15 @@ public class CardHandManager : MonoBehaviour
     private List<CardUI> hand = new List<CardUI>();
     private List<CardData> discard = new List<CardData>();
     private Player player;
+    private AudioManager audioManager;
+
+
+    [Header("Card Sounds")]
+    public AudioClip attackClip;
+    public AudioClip healClip;
+    public AudioClip buffClip;
+    public AudioClip clickClip;   // ←!  NEW
+
 
     public void Awake()
     {
@@ -44,6 +54,8 @@ public class CardHandManager : MonoBehaviour
             Debug.Log($"[CardHandManager] Added {GlobalGameState.Instance.PurchasedCardDatas.Count} purchased card(s) to deck.");
             GlobalGameState.Instance.PurchasedCardDatas.Clear(); // prevent double-adding
         }
+
+        audioManager = FindObjectOfType<AudioManager>();
 
         ShuffleDeck();
         DrawInitialHand();
@@ -94,6 +106,10 @@ public class CardHandManager : MonoBehaviour
 
     private void HandleCardClicked(CardUI ui)
     {
+        
+        // ! AUDIO WHEN CARD CLICKED:
+        AudioManager.Play(clickClip);
+        
         // Pause lifetime while playing the mini-game
         ui.SetLifetimePaused(true);
 
@@ -116,16 +132,22 @@ public class CardHandManager : MonoBehaviour
         {
             Debug.Log($"[CardHandManager] PLAYED Attack card: {ui.CardData.displayName} -> {ui.CardData.damageAmount} dmg");
             player.Attacking(ui.CardData.damageAmount, ui.CardData.reachargeTime, ui.CardData.attackRange, ui.CardData.attackAnimation); //example values
+
+            AudioManager.Play(attackClip);
         }
         else if (ui.CardData.cardType == CardType.Heal)
         {
             Debug.Log($"[CardHandManager] PLAYED Heal card: {ui.CardData.displayName} -> heal {ui.CardData.healAmount}");
             player.Heal(ui.CardData.healAmount);
+
+            AudioManager.Play(healClip);
         }
         else if (ui.CardData.cardType == CardType.Buff)
         {
             Debug.Log($"[CardHandManager] PLAYED Buff card: {ui.CardData.displayName} -> buff {ui.CardData.buffAmount} for {ui.CardData.buffDuration}s");
             player.buffDamage(ui.CardData.buffAmount, ui.CardData.buffDuration);
+
+            AudioManager.Play(buffClip);
         }
 
         // Move card data to discard and remove UI
