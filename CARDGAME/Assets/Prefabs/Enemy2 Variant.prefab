@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1460614545094855249, guid: 031a4e34ec22ee84a94da5394f758c91, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 637d51b5762a6744e866d53e1efacb3b, type: 2}
     - target: {fileID: 3223513782251007811, guid: 031a4e34ec22ee84a94da5394f758c91, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -18,11 +22,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3886096785265727224, guid: 031a4e34ec22ee84a94da5394f758c91, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9121
+      value: 0.47918
       objectReference: {fileID: 0}
     - target: {fileID: 3886096785265727224, guid: 031a4e34ec22ee84a94da5394f758c91, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.77442
+      value: -0.36061
       objectReference: {fileID: 0}
     - target: {fileID: 3886096785265727224, guid: 031a4e34ec22ee84a94da5394f758c91, type: 3}
       propertyPath: m_LocalPosition.z
@@ -56,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7200076585822919755, guid: 031a4e34ec22ee84a94da5394f758c91, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4723107735738678597, guid: c1cdd26cc09ad224884556bc4d8296ae, type: 3}
     - target: {fileID: 7414709230927206750, guid: 031a4e34ec22ee84a94da5394f758c91, type: 3}
       propertyPath: m_Name
       value: Enemy2 Variant

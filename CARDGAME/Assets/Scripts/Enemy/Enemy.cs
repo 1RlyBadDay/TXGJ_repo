@@ -120,7 +120,10 @@ public class Enemy : Entity
     {
         // ! Walking Animation
         //enemy is walking to position has not collided with someting yet
-        transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x, transform.position.y), enemyData.SPEED * Time.deltaTime);
+        Vector3 currentPos = transform.position;
+        Vector3 targetPos = new Vector3(player.transform.position.x, currentPos.y, currentPos.z);
+        Vector3 newPos = Vector3.MoveTowards(currentPos, targetPos, enemyData.SPEED * Time.deltaTime);
+        transform.position = newPos;
     }
 
     void OnDrawGizmos()

@@ -1393,7 +1393,7 @@ MonoBehaviour:
   - {fileID: 586826557}
   - {fileID: 438119118}
   - {fileID: 2140501907}
-  costs: 0a00000028000000c8000000f4010000f4010000f4010000f4010000
+  costs: 0a0000001e000000c8000000f4010000f4010000f4010000f4010000
   shopCard1: {fileID: 11400000, guid: 33cefaf5f017f794581231c28e016144, type: 2}
   shopCard2: {fileID: 11400000, guid: 5480c96d244d7a648a0624ae5b9429ac, type: 2}
   shopCard3: {fileID: 11400000, guid: e2cbab274216d4746aeb08b2c6bb52f9, type: 2}
@@ -2586,7 +2586,7 @@ MonoBehaviour:
     HP"     10 GOLD
 
     CARD 2:     SNIPE     "Deals 2 damage to enemy; Long Range"    
-    40 GOLD
+    30 GOLD
 
     CARD 3:     FOCUS     "Buffs attack by 250% for 3 seconds"     200
     GOLD

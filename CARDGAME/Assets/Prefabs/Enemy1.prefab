@@ -201,6 +201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HB canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3818894609326809911, guid: 34e9a39890194d748a881b6f9958b8cb, type: 3}
+      propertyPath: m_SortingOrder
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7372489791480756165, guid: 34e9a39890194d748a881b6f9958b8cb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

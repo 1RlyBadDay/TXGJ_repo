@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EntityManager : MonoBehaviour
 {
-    public GameObject enemyPrefab;
+    public List<GameObject> enemyPrefabs;
     public Transform spawnPoint;
     public int MAX_ENEMIES = 1;
     public bool spawning = true;
@@ -52,6 +52,8 @@ public class EntityManager : MonoBehaviour
     {
         numberOfEnemies++;
         // Spawn enemy with 180 degree Y rotation
+        int index = Random.Range(0, enemyPrefabs.Count);
+        GameObject enemyPrefab = enemyPrefabs[index];
         enemyPool.Add(Instantiate(enemyPrefab, spawnPoint.position, Quaternion.Euler(0, 180, 0)).gameObject);
         enemyPool[enemyPool.Count - 1].name = "Enemy " + numberOfEnemies;
         enemyPool[enemyPool.Count - 1].GetComponent<Enemy>().buffDamage(1f + (0.1f * (numberOfEnemies - 1)), 9999f); //increase damage by 10% for each enemy spawned after the first
