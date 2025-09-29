@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   cardArt: {fileID: 0}
   displayName: First Aid
-  description: '"Heals Player 2 HP"'
+  description: '"Heals Player 3 HP"'
   cardType: 1
   inputSequence: 03000000010000000200000002000000
   timeLimit: 12
   damageAmount: 0
-  healAmount: 2
+  healAmount: 3
   buffAmount: 0
   buffDuration: 0
   attackAnimation: {fileID: 0}
