@@ -2055,7 +2055,10 @@ MonoBehaviour:
     Beautiful
     Interface by Snyper Labs.
 
-    Simple Fade Scene Transition System by negleft.'
+    Simple Fade Scene Transition System by negleft.
+
+    Interface
+    and Item Sounds by Cafofo.'
   isCapitalized: 0
   animateTypingOnStart: 0
   addTrailingUnderscore: 0
@@ -2626,7 +2629,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 458.99997, y: -815.64374}
-  m_SizeDelta: {x: 1267.409, y: 581.39}
+  m_SizeDelta: {x: 1267.409, y: 597.41}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1387847652
 MonoBehaviour:
